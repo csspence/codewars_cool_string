@@ -22,7 +22,21 @@ For s = "AaA", the output should be true;
 For s = "q q", the output should be false.
 */
 
-function coolString(s) {
-  //coding and coding..
-  
+const coolString = (s) => {
+  for(let i = 0; i < s.length; i++) {
+    if(i === s.length - 1) {
+      if(Number(s[i]) !== NaN) {
+        return false;
+      }
+    } else {
+      if(Number(s[i]) !== NaN) {
+        return false;
+      }
+      if(s[i] === s[i].toUpperCase() && s[i + 1] === s[i + 1].toUpperCase()) {
+        return false;
+      }
+    }
+  }
+
+  return true;
 }
